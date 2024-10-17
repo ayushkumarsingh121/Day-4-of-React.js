@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>Problem: Avoid complex expressions in JSX interpolation</h1>
+  <hr>
+  <div id="root"></div>
+</body>
+
+<script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+<script type="text/babel">
+  let root = ReactDOM.createRoot(document.getElementById("root"));
+
+  // Complex, unreadable JSX interpolation (should be avoided)
+  const complexInterpolation = (
+    <div>
+      {/* Avoid overly complex expressions */}
+      <h2>{`The result is: ${[1, 2, 3].map(num => num * 2).reduce((acc, val) => acc + val, 0)}`}</h2>
+      
+      {/* Avoid long function calls directly in JSX */}
+      <p>{`Today's date is ${new Date().getFullYear()}-${new Date().getMonth() + 1}-${new Date().getDate()}`}</p>
+
+      {/* Avoid deeply nested ternary operators */}
+      <p>{true ? (false ? "Option 1" : "Option 2") : "Option 3"}</p>
+    </div>
+  );
+
+  // Render the problematic JSX
+  root.render(complexInterpolation);
+</script>
+
+</html>

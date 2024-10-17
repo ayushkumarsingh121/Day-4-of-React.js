@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <h1>
+      Problem: Create a React component App() that displays a fitness goal and
+      tracks the progress dynamically. Use variables for total steps, steps
+      completed, and goal. Show a message indicating if the user has reached
+      their goal or needs to keep going. Style the message dynamically based on
+      progress.
+    </h1>
+    <hr />
+    <div id="root"></div>
+  </body>
+
+  <script
+    src="https://unpkg.com/react@18/umd/react.development.js"
+    crossorigin
+  ></script>
+  <script
+    src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    crossorigin
+  ></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <script type="text/babel">
+    let root = ReactDOM.createRoot(document.getElementById("root"));
+    let App = () => {
+      let Goal = 10000;
+      let completed = 7500;
+      let DoStyle = {
+        color: completed >= Goal ? "green" : "orange",
+        fontWeight: "bold",
+      };
+      let result = completed >= Goal ? "reached their goal!" : "Keep Going!";
+      return (
+        <div>
+          <h2>Daily Step Goal</h2>
+          <p>Total Steps: 10000</p>
+          <p>Steps Completed: 7500</p>
+          <p style={DoStyle}>{result}</p>
+        </div>
+      );
+    };
+
+    root.render(<App />);
+  </script>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>Problem: Write a JSX code snippet that displays the result of multiplying 5 and 4 inside an tag.</h1>
+  <hr>
+  <div id="root"></div>
+</body>
+
+<script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+<script type="text/babel">
+  let root = ReactDOM.createRoot(document.getElementById("root"))
+
+  let App = () => {
+    let result = 5*4 
+    return(
+      <div>
+        <h1 className = "num" style = {{color : "Red"}}>{result}</h1>
+        </div>
+    )
+  }
+  root.render(<App/>)
+</script>
+
+</html>

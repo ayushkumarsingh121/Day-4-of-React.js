@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <h1>
+      Problem: Create a React component App() that displays a list of items with
+      their prices and calculates the total dynamically. Use variables for item
+      names and prices. Style the total price with custom CSS in JavaScript.
+    </h1>
+    <hr />
+    <div id="root"></div>
+  </body>
+
+  <script
+    src="https://unpkg.com/react@18/umd/react.development.js"
+    crossorigin
+  ></script>
+  <script
+    src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    crossorigin
+  ></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <script type="text/babel">
+    let root = ReactDOM.createRoot(document.getElementById("root"));
+
+    let App = () => {
+      let item1 = "Laptop"
+      let laptopPrice = 1000;
+      let item2 = "Headphones"
+      let headphonePrice = 200;
+      let total = laptopPrice + headphonePrice
+      let DoStyle = { color: "green", fontWeight: "bold" };
+
+      return (
+        <div>
+          <h2>Shopping Cart</h2>
+          <p>{item1}: ${laptopPrice}</p>
+          <p>{item2}: ${headphonePrice}</p>
+          <p style= {DoStyle}>Total: ${total}</p>
+        </div>
+      );
+    };
+
+    root.render(<App/>)
+  </script>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <h1>
+      Problem: Create a React component App() that takes in a user’s rating (1
+      to 5) and displays a dynamic message based on their rating. For example,
+      if the rating is 5, show "Excellent!", and if the rating is 3, show
+      "Good!". Style the message dynamically based on the rating.
+    </h1>
+    <hr />
+    <div id="root"></div>
+  </body>
+
+  <script
+    src="https://unpkg.com/react@18/umd/react.development.js"
+    crossorigin
+  ></script>
+  <script
+    src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    crossorigin
+  ></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <script type="text/babel">
+
+    let root = ReactDOM.createRoot(document.getElementById("root"));
+    
+    let App = () => {
+      let rating = 4;
+      let DoStyle = {
+        color: rating >= 4 ? "green" : rating === 3 ? "orange" : "red",
+        fontWeight: "bold",
+      };
+      let Review =
+        rating >= 5
+          ? "Excellent!"
+          : rating === 4
+          ? "Very Good!"
+          : rating === 3
+          ? "Good!"
+          : "Needs Improvement";
+
+      return (
+        <div>
+          <h1>User Rating</h1>
+          <p>Your rating: {rating}</p>
+          <p style={DoStyle}>Feedback: {Review}</p>
+        </div>
+      );
+    };
+
+    root.render(<App />);
+  </script>
+</html>

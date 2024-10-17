@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>Create a React component App() that displays a dynamic weather update. Use variables for the current temperature,
+    city, and weather condition (e.g., Sunny, Cloudy, Rainy). Depending on the temperature, show a message indicating
+    whether it's a hot or cold day.</h1>
+    <hr>
+  <div id="root"></div>
+</body>
+
+<script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+<script type="text/babel">
+  let root = ReactDOM.createRoot(document.getElementById("root"))
+
+  let App = () => {
+    let currentTemperature = 28
+    let city = "Paris"
+    let weatherCondition = "Sunny"
+    let message = currentTemperature >= 28 ? "Hot" : "Cold"
+
+    return (
+      <div>
+        <h1>weather Update</h1>
+        <p>The current temperature in {city} is {currentTemperature}°C.</p>
+        <p>The weather condition is {weatherCondition}.</p>
+        <p>It's a {message} day.</p>
+      </div>
+    )
+  }
+
+  root.render(<App />)
+</script>
+
+</html>

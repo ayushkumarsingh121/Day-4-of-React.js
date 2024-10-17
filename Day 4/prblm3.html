@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>Problem: Write a JSX expression that conditionally renders the message "Please sign up." if the isLoggedIn variable is false.</h1>
+  <hr>
+  <div id="root"></div>
+</body>
+
+<script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+<script type="text/babel">
+  let root = ReactDOM.createRoot(document.getElementById("root"))
+
+  let App = () => {
+    let userName = "Ayush"
+    let isLoggedIn = false
+    return(
+      <div>
+        {isLoggedIn ? <h1>Welcome back {userName}</h1> : <h1 style = {{color : "blue"}}>Please sign up</h1>}
+        </div>
+    )
+  }
+
+  root.render(<App/>)
+</script>
+
+</html>

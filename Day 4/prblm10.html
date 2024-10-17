@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <h1>Problem: Write a JSX expression that demonstrates how to prevent rendering a value in JSX when using conditional rendering.</h1>
+  <hr>
+  <div id="root"></div>
+</body>
+
+<script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+<script type="text/babel">
+  let root = ReactDOM.createRoot(document.getElementById("root"));
+
+  // A boolean variable to control rendering
+  const isLoggedIn = false; // Change this to true or false to see different outputs
+
+  // Conditional rendering based on the isLoggedIn variable
+  const result = (
+    <div>
+      {isLoggedIn ? <h2>Welcome back, User!</h2> : null}
+      {!isLoggedIn && <h2>Please log in to continue.</h2>}
+    </div>
+  );
+
+  // Render the result
+  root.render(result);
+</script>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div id="root"></div>
+  </body>
+
+  <script
+    src="https://unpkg.com/react@18/umd/react.development.js"
+    crossorigin
+  ></script>
+  <script
+    src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    crossorigin
+  ></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+  <script type="text/babel">
+    let root = ReactDOM.createRoot(document.getElementById("root"));
+
+    let App = () => {
+      let name = "John Doe!";
+      let age = 25;
+      let house = "New York";
+      let style = {color: 'white', backgroundColor: 'blue'};
+      let eligibleToVote = age >= 18 ? "You are eligible to vote" : "You are not eligible to vote";
+
+      return (
+        <div>
+          <p className="user-Name">{name}</p>
+          <p className="user-house">{house}</p>
+          <p className="user-age">{age}</p>
+          <p style={style}>{eligibleToVote}</p>
+        </div>
+      );
+    };
+
+    root.render(<App />)
+  </script>
+</html>
